@@ -1,24 +1,25 @@
 import React, { Component } from "react";
 import Table from "./Table";
+import Form from "./Form";
 
 class App extends Component {
   state = {
     characters: [
       {
-        name: "Anders",
-        job: "Andersson",
+        ForName: "Anders",
+        LastName: "Andersson",
       },
       {
-        name: "Bengt",
-        job: "Bengtsson",
+        ForName: "Bengt",
+        LastName: "Bengtsson",
       },
       {
-        name: "Cecilia",
-        job: "Cillasson",
+        ForName: "Cecilia",
+        LastName: "Cillasson",
       },
       {
-        name: "Dennis",
-        job: "Danielsson",
+        ForName: "Dennis",
+        LastName: "Danielsson",
       },
     ],
   };
@@ -33,15 +34,23 @@ class App extends Component {
     });
   };
 
+  handleSubmit = (character) => {
+    this.setState({ characters: [...this.state.characters, character] });
+  };
+
   render() {
     const { characters } = this.state;
 
     return (
       <div className="container">
+        <h1>Försöker fatta React!</h1>
+        <p>går sissodär..</p>
         <Table
           characterData={characters}
           removeCharacter={this.removeCharacter}
         />
+        <h4>Lägg till person</h4>
+        <Form handleSubmit={this.handleSubmit} />
       </div>
     );
   }

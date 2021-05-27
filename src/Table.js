@@ -1,12 +1,12 @@
-import React, { Component } from "react";
+import React from "react";
 
 const TableHeader = () => {
   return (
     <thead>
       <tr>
-        <th>ForName</th>
-        <th>LastName</th>
-        <th>Remove</th>
+        <th>Förnamn</th>
+        <th>Efternamn</th>
+        <th>Radera</th>
       </tr>
     </thead>
   );
@@ -19,7 +19,7 @@ const TableBody = (props) => {
         <td>{row.ForName}</td>
         <td>{row.LastName}</td>
         <td>
-          <button onClick={() => props.removeCharacter(index)}>Delete</button>
+          <button onClick={() => props.removeCharacter(index)}>Radera</button>
         </td>
       </tr>
     );
